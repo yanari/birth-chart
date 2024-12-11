@@ -1,0 +1,40 @@
+@import './base.css';
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+  font-family: 'Lora', serif;
+}
+
+main {
+  text-align: center;
+  padding: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  height: 100vh;
+  width: 100vw;
+  font-weight: normal;
+  overflow: auto;
+}
+
+.description {
+  padding: 0;
+}
+
+@media (min-width: 1024px) {
+
+  .description {
+    padding: 0 2rem;
+  }
+}
