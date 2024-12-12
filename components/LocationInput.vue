@@ -57,7 +57,7 @@ watch(completer, autocomplete => {
             required
         >
             <UInput icon="i-heroicons-globe-americas-solid" />
-            <input class="absolute bg-transparent h-11 w-11/12 left-12 outline-none top-0" v-model="input" ref="inputRef"/>
+            <input class="text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 absolute bg-transparent h-11 w-11/12 left-12 outline-none top-0" v-model="input" ref="inputRef"/>
         </UFormGroup>
     </div>
 </template>

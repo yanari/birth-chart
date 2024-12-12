@@ -8,6 +8,13 @@ const state = reactive({
     latLng: {}
 })
 
+const isDisabled = computed(() => {
+    const isLatEmpty = isLatitudesEmpty(state.latLng);
+    const isDateToday = isDateEmpty(state.date)
+    
+    return isLatEmpty && isDateToday;
+})
+
 async function onSubmit(event) {
     // Do something with data
     console.log(event.data)
@@ -25,7 +32,7 @@ async function onSubmit(event) {
                 required
             >
                 <UPopover :popper="{ placement: 'bottom-start' }">
-                    <UButton icon="i-heroicons-calendar-days-20-solid" :label="format(state.date, 'd MMM, yyy - HH:mm')" />
+                    <UInput class="w-full" icon="i-heroicons-calendar-days-20-solid" readonly :placeholder="format(state.date, 'd MMM, yyy - HH:mm')" />
     
                     <template #panel="{ close }">
                         <DatePicker v-model="state.date" is-required @close="close" mode="dateTime" is24hr />
@@ -33,7 +40,7 @@ async function onSubmit(event) {
                 </UPopover>
             </UFormGroup>
 
-            <UButton label="Submit" block :ui="{ rounded: 'rounded-full' }" type="submit">
+            <UButton :disabled="isDisabled" label="Submit" block :ui="{ rounded: 'rounded-full' }" type="submit">
                 <template #trailing>
                     <UIcon name="i-heroicons-arrow-right-20-solid" class="w-5 h-5" />
                 </template>
