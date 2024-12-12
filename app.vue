@@ -1,8 +1,3 @@
-<script setup>
-const appConfig = useAppConfig()
-
-console.log(appConfig.theme)
-</script>
 <template>
     <div>
         <BackgroundImage />
