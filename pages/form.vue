@@ -8,6 +8,10 @@ const state = reactive({
     latLng: {}
 })
 
+const isLoading = ref(false);
+const router = useRouter();
+const astros = useAstrosStore();
+
 const isDisabled = computed(() => {
     const isLatEmpty = isLatitudesEmpty(state.latLng);
     const isDateToday = isDateEmpty(state.date)
@@ -16,8 +20,16 @@ const isDisabled = computed(() => {
 })
 
 async function onSubmit(event) {
-    // Do something with data
-    console.log(event.data)
+    isLoading.value = true;
+    const { response } = await $fetch('/api/submit', {
+        method: 'POST',
+        body: event.data
+    });
+
+    astros.set(response);
+    router.push('/result')
+
+    isLoading.value = false;
 }
 </script>
 <template>
@@ -40,7 +52,14 @@ async function onSubmit(event) {
                 </UPopover>
             </UFormGroup>
 
-            <UButton :disabled="isDisabled" label="Submit" block :ui="{ rounded: 'rounded-full' }" type="submit">
+            <UButton
+                :loading="isLoading"
+                :disabled="isDisabled"
+                :ui="{ rounded: 'rounded-full' }"
+                type="submit"
+                label="Submit"
+                block
+            >
                 <template #trailing>
                     <UIcon name="i-heroicons-arrow-right-20-solid" class="w-5 h-5" />
                 </template>

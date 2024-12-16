@@ -27,7 +27,6 @@ const autoCompleteResult = () => {
         fields: ['geometry', 'icon', 'name'],
         types: ['(regions)'],
     };
-    console.log(inputRef?.value)
     completer.value = new googleApi.value.maps.places.Autocomplete(inputRef?.value, options);
 }
 
