@@ -1,5 +1,8 @@
+<script setup>
+import 'assets/main.css';
+</script>
 <template>
-    <div>
+    <div class="overflow-auto w-screen h-screen">
         <BackgroundImage />
         <NuxtPage />
     </div>

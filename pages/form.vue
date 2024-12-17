@@ -33,7 +33,7 @@ async function onSubmit(event) {
 }
 </script>
 <template>
-    <UContainer class="max-w-lg">
+    <UContainer class="max-w-lg h-dvh flex justify-center flex-col">
         <UForm :state="state" class="space-y-4" @submit="onSubmit">
             <LocationInput v-model="state.latLng" />
 

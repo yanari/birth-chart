@@ -7,7 +7,10 @@ export const useAstrosStore = defineStore('astros', {
     getters: {
         hasData: (state) => {
             return state.data && Object.keys(state.data).length > 0;
-        }
+        },
+        // data: (state) => {
+        //     return state.data;
+        // }
     },
     actions: {
         set(data: Record<string, any>) {
