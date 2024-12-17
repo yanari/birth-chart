@@ -1,9 +1,9 @@
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
 
-    const URL = process.env.URL;
+    const BACKEND_URL = process.env.BACKEND_URL;
 
-    const response = await $fetch(`${URL}/horoscope`, {
+    const response = await $fetch(`${BACKEND_URL}/horoscope`, {
       query: {
         time: body.date,
         latitude: body.latLng.lat,
