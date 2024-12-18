@@ -6,7 +6,7 @@ import 'v-calendar/dist/style.css'
 const toast = useToast()
 
 const state = reactive({
-    date: new Date(),
+    date: new Date('2000-01-01T12:00:00'),
     latLng: {}
 })
 

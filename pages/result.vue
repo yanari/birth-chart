@@ -27,7 +27,10 @@ const elements = computed(() => data.calculation);
                 </h2>
                 <Description :set="lack" />
             </div>
-            <UDivider />
+            <UDivider class="mb-8" />
+            <div class="max-h-88 justify-center flex">
+                <Chart :elements="elements" />
+            </div>
             <!-- <div class="chart-area">
                 <Chart :elements="elements" />
             </div>
@@ -38,10 +41,4 @@ const elements = computed(() => data.calculation);
         </main>
     </UContainer>
 </template>
-<style>
-.chart-area {
-    display: flex;
-    justify-content: center;
-    max-height: 24rem;
-}
-</style>
+<style></style>
