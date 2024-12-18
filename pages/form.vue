@@ -34,7 +34,7 @@ async function onSubmit(event) {
         meta.setTitle(response.ogTitle);
         meta.setImage(response.chartImage);
 
-        router.push('/result').then(() => {
+        router.push(`/result?els=${response.params}`).then(() => {
             isLoading.value = false;
         });
     

@@ -1,4 +1,12 @@
 <script setup>
+const route = useRoute();
+const meta = useMetaStore();
+
+onMounted(() => {
+    if (route.query.els) {
+        meta.setTitle(getOgTitle(route.query.els));
+    }
+})
 
 </script>
 <template>
