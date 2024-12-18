@@ -32,10 +32,8 @@ async function onSubmit(event) {
         astros.set(response);
         router.push('/result');
     
-        isLoading.value = false;
     } catch (e) {
         console.error(e);
-        isLoading.value = false;
         toast.add({
             id: 'error',
             title: 'An error occurred while submitting the form.',
@@ -43,6 +41,7 @@ async function onSubmit(event) {
             icon: 'heroicons-exclamation-circle',
         });
     }
+    isLoading.value = false;
 }
 </script>
 <template>

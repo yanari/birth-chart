@@ -14,11 +14,11 @@ const elements = computed(() => data.calculation);
 
 </script>
 <template>
-    <UContainer class="max-w-3xl">
+    <UContainer class="max-w-3xl px-0 md:px-4">
         <main class="bg-slate-600/10 text-stone-300 text-start">
             <div class="description">
-                <h2 class="text-5xl/relaxed font-bold text-center">
-                    {{ dominantTitle }}
+                <h2 class="text-4xl md:text-5xl/relaxed font-bold text-center">
+                    {{ dominantTitle }}:
                 </h2>
                 <Description :set="dominant" />
                 <UDivider />
@@ -28,8 +28,7 @@ const elements = computed(() => data.calculation);
                 <Description :set="lack" />
             </div>
             <UDivider />
-            <!-- <Separator />
-            <div class="chart-area">
+            <!-- <div class="chart-area">
                 <Chart :elements="elements" />
             </div>
             <Separator />
