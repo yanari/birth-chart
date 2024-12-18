@@ -3,19 +3,19 @@ const route = useRoute();
 const meta = useMetaStore();
 
 useSeoMeta({
-    title: () => meta.title,
-    ogTitle: () => meta.title,
+    title: () => route.query.els ? getOgTitle(route.query.els) : meta.title,
+    ogTitle: () => route.query.els ? getOgTitle(route.query.els) : meta.title,
     description: () => meta.description,
     ogDescription: () => meta.description,
     ogImage: () => meta.image,
     twitterCard: () => meta.twitterCard,
 })
 
-onMounted(() => {
-    if (route.query.els) {
-        meta.setTitle(getOgTitle(route.query.els));
-    }
-})
+// onMounted(() => {
+//     if (route.query.els) {
+//         meta.setTitle(getOgTitle(route.query.els));
+//     }
+// })
 
 </script>
 <template>
