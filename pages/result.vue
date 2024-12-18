@@ -32,7 +32,7 @@ const elements = computed(() => data.calculation);
                 <Chart :elements="elements" />
             </div>
             <div class="flex justify-between">
-                <SocialShare network="twitter" :styled="true" />
+                <SocialShare url="" network="twitter" :styled="true" />
                 <SocialShare network="bluesky" :styled="true" />
                 <SocialShare network="telegram" :styled="true" />
             </div>
