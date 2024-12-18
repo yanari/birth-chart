@@ -38,7 +38,9 @@ async function onSubmit(event) {
         isLoading.value = false;
         toast.add({
             id: 'error',
-            title: 'An error occurred while submitting the form. Please try again later.',
+            title: 'An error occurred while submitting the form.',
+            description: 'Please try again later.',
+            icon: 'heroicons-exclamation-circle',
         });
     }
 }
