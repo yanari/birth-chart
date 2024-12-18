@@ -2,6 +2,7 @@
 definePageMeta({
     middleware: 'has-results'
 })
+
 const { data } = useAstrosStore();
 
 const dominant = ref(data.dominant);
@@ -9,7 +10,6 @@ const lack = ref(data.lack);
 
 const dominantTitle = computed(() => data.dominantTitle);
 const lackOfTitle = computed(() => data.lackTitle);
-
 const elements = computed(() => data.calculation);
 
 </script>

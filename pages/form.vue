@@ -4,6 +4,9 @@ import { DatePicker } from 'v-calendar'
 import 'v-calendar/dist/style.css'
 
 const toast = useToast()
+const router = useRouter();
+const astros = useAstrosStore();
+const meta = useMetaStore();
 
 const state = reactive({
     date: new Date('2000-01-01T12:00:00'),
@@ -11,8 +14,6 @@ const state = reactive({
 })
 
 const isLoading = ref(false);
-const router = useRouter();
-const astros = useAstrosStore();
 
 const isDisabled = computed(() => {
     const isLatEmpty = isLatitudesEmpty(state.latLng);
@@ -28,9 +29,12 @@ async function onSubmit(event) {
             method: 'POST',
             body: event.data
         });
-    
+        
         astros.set(response);
-        router.push('/result').then(result => {
+        meta.setTitle(response.ogTitle);
+        meta.setImage(response.chartImage);
+
+        router.push('/result').then(() => {
             isLoading.value = false;
         });
     

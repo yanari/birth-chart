@@ -1,5 +1,16 @@
 <script setup>
 import 'assets/main.css';
+
+const meta = useMetaStore();
+
+useSeoMeta({
+    title: () => meta.title,
+    ogTitle: () => meta.title,
+    description: () => meta.description,
+    ogDescription: () => meta.description,
+    ogImage: () => meta.image,
+    twitterCard: () => meta.twitterCard,
+})
 </script>
 <template>
     <div class="overflow-auto w-screen h-screen">
