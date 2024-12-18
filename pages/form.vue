@@ -30,7 +30,9 @@ async function onSubmit(event) {
         });
     
         astros.set(response);
-        router.push('/result');
+        router.push('/result').then(result => {
+            isLoading.value = false;
+        });
     
     } catch (e) {
         console.error(e);
@@ -40,8 +42,8 @@ async function onSubmit(event) {
             description: 'Please try again later.',
             icon: 'heroicons-exclamation-circle',
         });
+        isLoading.value = false;
     }
-    isLoading.value = false;
 }
 </script>
 <template>
@@ -55,11 +57,19 @@ async function onSubmit(event) {
                 description="Which day and time?"
                 required
             >
-                <UPopover :popper="{ placement: 'bottom-start' }">
+                <UPopover :popper="{ placement: 'top-start' }">
                     <UInput class="w-full" icon="i-heroicons-calendar-days-20-solid" readonly :placeholder="format(state.date, 'd MMM, yyy - HH:mm')" />
     
                     <template #panel="{ close }">
-                        <DatePicker v-model="state.date" is-required @close="close" mode="dateTime" is24hr />
+                        <DatePicker
+                            is-dark
+                            color="teal"
+                            v-model="state.date"
+                            is-required
+                            @close="close"
+                            mode="dateTime"
+                            is24hr
+                        />
                     </template>
                 </UPopover>
             </UFormGroup>

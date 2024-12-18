@@ -17,13 +17,13 @@ const elements = computed(() => data.calculation);
     <UContainer class="max-w-3xl px-0 md:px-4">
         <main class="bg-slate-600/10 text-stone-300 text-start">
             <div class="description">
-                <h2 class="text-4xl md:text-5xl/relaxed font-bold text-center">
+                <h2 class="text-4xl/relaxed md:text-4xl/loose font-bold text-center mb-6">
                     {{ dominantTitle }}:
                 </h2>
                 <Description :set="dominant" />
-                <UDivider />
-                <h2 class="mt-8 text-3xl/loose font-bold text-center">
-                    {{ lackOfTitle }}
+                <UDivider class="mb-8" />
+                <h2 class="text-2xl/relaxed md:text-3xl/loose font-bold text-center mb-6">
+                    {{ lackOfTitle }}:
                 </h2>
                 <Description :set="lack" />
             </div>
