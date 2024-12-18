@@ -40,6 +40,6 @@ const colors = computed(() => {
 });
 </script>
 <template>
-    <Pie v-if="chartData !== null" :data="chartData" :options="options" />
+    <Pie class="max-h-80" v-if="chartData !== null" :data="chartData" :options="options" />
 </template>
 <style scoped></style>

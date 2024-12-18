@@ -28,11 +28,11 @@ const elements = computed(() => data.calculation);
                 <Description :set="lack" />
             </div>
             <UDivider class="mb-8" />
-            <div class="max-h-88 justify-center flex mb-10">
+            <div class="justify-center flex mb-10">
                 <Chart :elements="elements" />
             </div>
             <div class="flex justify-between">
-                <SocialShare url="" network="twitter" :styled="true" />
+                <SocialShare network="twitter" :styled="true" />
                 <SocialShare network="bluesky" :styled="true" />
                 <SocialShare network="telegram" :styled="true" />
             </div>
