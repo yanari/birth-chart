@@ -5,6 +5,7 @@ import 'assets/main.css';
     <div class="overflow-auto w-screen h-screen">
         <BackgroundImage />
         <NuxtPage />
+        <UNotifications />
     </div>
 </template>
 <style>

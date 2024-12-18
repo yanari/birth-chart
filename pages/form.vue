@@ -3,6 +3,8 @@ import { format } from 'date-fns';
 import { DatePicker } from 'v-calendar'
 import 'v-calendar/dist/style.css'
 
+const toast = useToast()
+
 const state = reactive({
     date: new Date(),
     latLng: {}
@@ -20,16 +22,25 @@ const isDisabled = computed(() => {
 })
 
 async function onSubmit(event) {
-    isLoading.value = true;
-    const { response } = await $fetch('/api/submit', {
-        method: 'POST',
-        body: event.data
-    });
-
-    astros.set(response);
-    router.push('/result')
-
-    isLoading.value = false;
+    try {
+        isLoading.value = true;
+        const { response } = await $fetch('/api/submit', {
+            method: 'POST',
+            body: event.data
+        });
+    
+        astros.set(response);
+        router.push('/result');
+    
+        isLoading.value = false;
+    } catch (e) {
+        console.error(e);
+        isLoading.value = false;
+        toast.add({
+            id: 'error',
+            title: 'An error occurred while submitting the form. Please try again later.',
+        });
+    }
 }
 </script>
 <template>

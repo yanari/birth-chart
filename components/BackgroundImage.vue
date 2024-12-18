@@ -7,12 +7,15 @@ function onLoadBackgroundImg() {
 </script>
 <template>
     <div class="bg-neutral-900 absolute left-0 top-0 bottom-0 right-0 -z-10 w-screen h-screen">
-        <NuxtImg
-            class="h-full w-full bg-fixed object-right object-cover overflow-auto"
-            v-show="isImageLoaded"
-            @load="onLoadBackgroundImg"
-            src="/background.jpeg"
-        />
+        <Transition name="fade">
+            <NuxtImg
+                class="h-full w-full bg-fixed object-right object-cover overflow-auto transition-opacity"
+                v-show="isImageLoaded"
+                @load="onLoadBackgroundImg"
+                src="/background.jpeg"
+                placeholder
+            />
+        </Transition>
     </div>
 </template>
 <style scoped>
