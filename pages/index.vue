@@ -5,6 +5,7 @@ const meta = useMetaStore();
 useSeoMeta({
     // title: () => route.query.els ? getOgTitle(route.query.els) : meta.title,
     title: () => Element fire,
+    ogTitle: () => Element fire,
     ogTitle: () => route.query.els ? getOgTitle(route.query.els) : meta.title,
     description: () => meta.description,
     ogDescription: () => meta.description,
