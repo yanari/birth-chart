@@ -22,9 +22,9 @@ export const getElementNames = (abbreviatedElements: string) => {
 }
 
 export const getOgTitle = (query: string) => {
-    // if (!/wfea/.test(query)) {
-    //     return 'Find out the elements that dominate your chart.';
-    // }
+    if (!query || typeof query !== 'string') {
+        return 'Find out the elements that dominate your chart.';
+    }
     const { text, plural } = getElementNames(query);
     return `The element${plural? 's' :''} that dominate my birth chart ${plural? 'are' :'is'} ${text}.`;
 }

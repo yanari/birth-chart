@@ -31,7 +31,7 @@ const elements = computed(() => data.calculation);
             <div class="justify-center flex mb-10">
                 <Chart :elements="elements" />
             </div>
-            <div class="flex justify-between">
+            <div class="mb-8 flex justify-between">
                 <SocialShare network="twitter" :styled="true" />
                 <SocialShare network="bluesky" :styled="true" />
                 <SocialShare network="telegram" :styled="true" />
