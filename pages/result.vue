@@ -17,7 +17,8 @@ const dominantTitle = computed(() => data.dominantTitle);
 const lackOfTitle = computed(() => data.lackTitle);
 const elements = computed(() => data.calculation);
 
-const fullUrl = ref('https://' + host + '?els=' + params.value);
+const fullUrl = ref('https://calculate-astrology.netlify.app?els=' + params.value);
+// const fullUrl = ref('http://' + host + '?els=' + params.value);
 
 </script>
 <template>
