@@ -6,7 +6,7 @@ export const useMetaStore = defineStore('meta', {
             title: 'Find out the elements that dominate your chart!',
             description: 'by github.com/yanari',
             twitterCard: 'summary',
-            image: null
+            image: 'https://www.76psychics.com/Images/Blog/d83023f4-18ef-4f21-998e-89047bdd0a68.jpg'
         }
     },
     actions: {
