@@ -2,11 +2,11 @@
 const route = useRoute();
 const meta = useMetaStore();
 
+const params = ref(route.query.els);
+
 useSeoMeta({
-    // title: () => route.query.els ? getOgTitle(route.query.els) : meta.title,
-    title: () => 'Element fire',
-    ogTitle: () => 'Element fire',
-    ogTitle: () => route.query.els ? getOgTitle(route.query.els) : meta.title,
+    title: () => params ? getOgTitle(params) : meta.title,
+    ogTitle: () => params ? getOgTitle(params) : meta.title,
     description: () => meta.description,
     ogDescription: () => meta.description,
     ogImage: () => meta.image,
