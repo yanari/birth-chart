@@ -4,6 +4,11 @@ definePageMeta({
 })
 
 const { data } = useAstrosStore();
+const route = useRoute();
+const params = ref(route.query.els);
+
+const { host } = useRequestURL();
+
 
 const dominant = ref(data.dominant);
 const lack = ref(data.lack);
@@ -11,6 +16,8 @@ const lack = ref(data.lack);
 const dominantTitle = computed(() => data.dominantTitle);
 const lackOfTitle = computed(() => data.lackTitle);
 const elements = computed(() => data.calculation);
+
+const fullUrl = ref('https://' + host + '?els=' + params.value);
 
 </script>
 <template>
@@ -32,9 +39,9 @@ const elements = computed(() => data.calculation);
                 <Chart :elements="elements" />
             </div>
             <div class="mb-8 flex justify-between">
-                <SocialShare network="twitter" :styled="true" />
-                <SocialShare network="bluesky" :styled="true" />
-                <SocialShare network="telegram" :styled="true" />
+                <SocialShare url="fullUrl" network="twitter" :styled="true" />
+                <SocialShare url="fullUrl" network="bluesky" :styled="true" />
+                <SocialShare url="fullUrl" network="telegram" :styled="true" />
             </div>
         </main>
     </UContainer>
