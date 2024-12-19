@@ -17,9 +17,8 @@ const dominantTitle = computed(() => data.dominantTitle);
 const lackOfTitle = computed(() => data.lackTitle);
 const elements = computed(() => data.calculation);
 
-const fullUrl = ref('https://calculate-astrology.netlify.app?els=' + params.value);
-console.log(fullUrl);
-// const fullUrl = ref('http://' + host + '?els=' + params.value);
+// const fullUrl = ref('https://calculate-astrology.netlify.app?els=' + params.value);
+const fullUrl = ref('http://' + host + '?els=' + params.value);
 
 </script>
 <template>
@@ -41,9 +40,9 @@ console.log(fullUrl);
                 <Chart :elements="elements" />
             </div>
             <div class="mb-8 flex justify-between">
-                <SocialShare url="fullUrl" network="twitter" :styled="true" />
-                <SocialShare url="fullUrl" network="bluesky" :styled="true" />
-                <SocialShare url="fullUrl" network="telegram" :styled="true" />
+                <SocialShare :url="fullUrl" network="twitter" :styled="true" />
+                <SocialShare :url="fullUrl" network="bluesky" :styled="true" />
+                <SocialShare :url="fullUrl" network="telegram" :styled="true" />
             </div>
         </main>
     </UContainer>
