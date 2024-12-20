@@ -6,7 +6,6 @@ import 'v-calendar/dist/style.css'
 const toast = useToast()
 const router = useRouter();
 const astros = useAstrosStore();
-const meta = useMetaStore();
 
 const state = reactive({
     date: new Date('2000-01-01T12:00:00'),
@@ -31,8 +30,6 @@ async function onSubmit(event) {
         });
         
         astros.set(response);
-        meta.setTitle(response.ogTitle);
-        meta.setImage(response.chartImage);
 
         router.push(`/result?els=${response.params}`).then(() => {
             isLoading.value = false;

@@ -1,23 +1,17 @@
 <script setup>
 const route = useRoute();
-const meta = useMetaStore();
-
-const params = ref(route.query.els);
+const { data: meta } = await useFetch('/api/meta', {
+    query: route.query
+});
 
 useSeoMeta({
-    title: () => params ? getOgTitle(params) : meta.title,
-    ogTitle: () => params ? getOgTitle(params) : meta.title,
-    description: () => meta.description,
-    ogDescription: () => meta.description,
-    ogImage: () => meta.image,
+    title: () => meta.ogTitle,
+    ogTitle: () => meta.ogTitle,
+    description: () => meta.ogDescription,
+    ogDescription: () => meta.ogDescription,
+    ogImage: () => meta.ogImage,
     twitterCard: () => meta.twitterCard,
 })
-
-// onMounted(() => {
-//     if (route.query.els) {
-//         meta.setTitle(getOgTitle(route.query.els));
-//     }
-// })
 
 </script>
 <template>
