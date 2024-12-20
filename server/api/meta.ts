@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
     console.log('els:', els)
     
     if (!els || els === null || !(els).includes('wfea,')) {
-        return 'Find out the elements that dominate your chart!';
+        return 'FLALLALALALA';
     }
     const { text, plural } = getElementNames(els);
 
