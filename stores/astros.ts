@@ -17,4 +17,5 @@ export const useAstrosStore = defineStore('astros', {
             this.data = data;
         }
     },
+    persist: true
 })
