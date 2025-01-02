@@ -14,6 +14,8 @@ const { data: meta } = await useFetch('/api/meta', {
 useSeoMeta({
     title: () => meta.ogTitle,
     ogTitle: () => meta.ogTitle,
+    twitterTitle: () => meta.ogTitle,
+    twitterImage: () => meta.ogImage,
     description: () => meta.ogDescription,
     ogDescription: () => meta.ogDescription,
     ogImage: () => meta.ogImage,
