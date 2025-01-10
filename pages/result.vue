@@ -20,10 +20,9 @@ const elements = computed(() => data.calculation);
 // Share
 const ogTitle = computed(() => data.ogTitle);
 
-// const fullUrl = ref('https://calculate-astrology.netlify.app?els=' + params.value);
 const fullUrl = computed(() => 'http://' + host.replace('/', '') + '?els=' + params.value);
 
-const shareTwitter = computed(() => `http://twitter.com/share?text=${ogTitle.value} Find out yours on&url=${fullUrl.value}&hashtags=hashtag1,hashtag2,hashtag3`)
+const shareText = computed(() => `http://twitter.com/share?text=${ogTitle.value}! Find out yours on&url=${fullUrl.value}`)
 
 </script>
 <template>
@@ -45,10 +44,9 @@ const shareTwitter = computed(() => `http://twitter.com/share?text=${ogTitle.val
                 <Chart :elements="elements" />
             </div>
             <div class="mb-8 flex justify-between">
-                <ShareIcon social-media="X" :text-to-post="shareTwitter" bg="bg-x" />
-                <!-- <ShareIcon social-media="Facebook" :text-to-post="shareTwitter" bg="bg-facebook" /> -->
-                <ShareIcon social-media="Telegram" :text-to-post="shareTwitter" bg="bg-telegram" />
-                <ShareIcon social-media="Tumblr" :text-to-post="shareTwitter" bg="bg-tumblr" />
+                <ShareIcon social-media="X" :text-to-post="shareText" bg="bg-x" />
+                <ShareIcon social-media="Telegram" :text-to-post="shareText" bg="bg-telegram" />
+                <ShareIcon social-media="Tumblr" :text-to-post="shareText" bg="bg-tumblr" />
             </div>
         </main>
     </UContainer>
