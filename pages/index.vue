@@ -1,25 +1,40 @@
 <script setup>
-// defineOgImageComponent('NuxtSeo', {
-//     title: 'Find out the dominant elements in your chart 💫',
-//     description: 'by github.com/yanari',
-//     theme: '#2dd4bf',
-//     colorMode: 'dark',
-// });
+defineOgImageComponent('NuxtSeo', {
+    title: 'Find out the dominant elements in your chart 💫',
+    description: 'by github.com/yanari',
+    theme: '#2dd4bf',
+    colorMode: 'dark',
+});
 
 const route = useRoute();
 const { data: meta } = await useFetch('/api/meta', {
     query: route.query
 });
 
+useHead({
+    htmlAttrs: {
+        lang: 'en'
+    },
+    link: [
+        {
+            rel: 'icon',
+            type: 'image/png',
+            href: '/favicon.png'
+        }
+    ]
+})
+
 useSeoMeta({
-    title: () => meta.ogTitle,
-    ogTitle: () => meta.ogTitle,
-    twitterTitle: () => meta.ogTitle,
-    twitterImage: () => meta.ogImage,
-    description: () => meta.ogDescription,
-    ogDescription: () => meta.ogDescription,
-    ogImage: () => meta.ogImage,
-    twitterCard: () => meta.twitterCard,
+    title: () => meta.value.ogTitle,
+    ogTitle: () => meta.value.ogTitle,
+    twitterTitle: () => meta.value.ogTitle,
+    twitterImage: () => meta.value.ogImage,
+    twitterDescription: () => meta.value.ogDescription,
+    description: () => meta.value.ogDescription,
+    ogDescription: () => meta.value.ogDescription,
+    ogImage: () => meta.value.ogImage,
+    ogUrl: () => meta.value.ogUrl,
+    twitterCard: () => meta.value.twitterCard,
 })
 
 </script>

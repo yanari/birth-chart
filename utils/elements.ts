@@ -6,9 +6,9 @@ const AbbreviatedElements: {[index: string]: string} = {
 }
 
 export const getElementNames = (abbreviatedElements: string) => {
-    if (abbreviatedElements.includes(',')) {
-        const letters = abbreviatedElements.split(',');
-        const elements = letters.map((letter) => AbbreviatedElements[letter]);
+    if (abbreviatedElements.length > 1) {
+        const elements = [...abbreviatedElements].map(letter => AbbreviatedElements[letter]);
+
         return {
             text: elements.join(' and '),
             plural: true
@@ -20,11 +20,3 @@ export const getElementNames = (abbreviatedElements: string) => {
         }
     }
 }
-
-// export const getOgTitle = (query: string) => {
-//     if (!query || typeof query !== 'string') {
-//         return 'Find out the elements that dominate your chart.';
-//     }
-//     const { text, plural } = getElementNames(query);
-//     return `The element${plural? 's' :''} that dominate my birth chart ${plural? 'are' :'is'} ${text}.`;
-// }

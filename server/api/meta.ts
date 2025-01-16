@@ -1,33 +1,24 @@
 import { getElementNames } from "~/utils/elements";
 
-const REGEX = /[wfea,]/
+const REGEX = /[wfea]/
 
 export default defineEventHandler(async (event) => {
     const { els }: { els: string } = getQuery(event)
 
-    let title = '';
-    let description = '';
+    let title = 'Find out the dominant elements on your birth chart! 💫';
+    let description = 'by github.com/yanari';
     
-    let text, plural;
-    
-    if (!els || els === null || !REGEX.test(els)) {
-        title = 'Find out the dominant elements on your birth chart!'
-        description = 'by github.com/yanari'
-    } else {
-        ({ text, plural } = getElementNames(els));
-        title = `The element${plural? 's' :''} that dominate my birth chart ${plural? 'are' :'is'} ${text}`
+    if (REGEX.test(els)) {
+        let {text, plural} = getElementNames(els);
+        title = `The element${plural? 's' :''} that dominate my birth chart ${plural? 'are' :'is'} ${text} 💫`
         description = 'Find out yours too! by github.com/yanari';
     }
 
-    console.log('ogTitle:', title)
-    console.log('ogDescription:', description)
-
     return {
         ogTitle: title,
-        twitterTitle: title,
         ogDescription: description,
-        twitterDescription: description,
         ogType: 'website',
+        ogImage: 'https://wallpapers.com/images/hd/aesthetic-astrology-dbat1z9z5gyspsp4.jpg',
         ogUrl: 'https://calculate-astrology.netlify.app',
         twitterCard: 'summary_large_image'
     }
