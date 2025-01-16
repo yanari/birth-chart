@@ -1,11 +1,4 @@
 <script setup>
-// defineOgImageComponent('NuxtSeo', {
-//     title: 'Find out the dominant elements in your chart 💫',
-//     description: 'by github.com/yanari',
-//     theme: '#2dd4bf',
-//     colorMode: 'dark',
-// });
-
 const route = useRoute();
 const { data: meta } = await useFetch('/api/meta', {
     query: route.query

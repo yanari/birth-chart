@@ -9,7 +9,6 @@ export default defineNuxtConfig({
       '@nuxt/image',
       '@nuxtjs/tailwindcss',
       '@stefanobartoletti/nuxt-social-share',
-      'nuxt-og-image'
     ],
     app: {
         pageTransition: { name: 'page', mode: 'out-in' }
