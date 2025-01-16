@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
     let title = 'Find out the dominant elements on your birth chart! 💫';
     let description = 'by github.com/yanari';
     
-    if (REGEX.test(els)) {
+    if (els && REGEX.test(els)) {
         let {text, plural} = getElementNames(els);
         title = `The element${plural? 's' :''} that dominate my birth chart ${plural? 'are' :'is'} ${text} 💫`
         description = 'Find out yours too! by github.com/yanari';
