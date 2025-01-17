@@ -18,11 +18,13 @@ const lackOfTitle = computed(() => data.lackTitle);
 const elements = computed(() => data.calculation);
 
 // Share
-const ogTitle = computed(() => data.ogTitle);
+const ogTitle = computed(() => data.ogTitle + '!');
 
 const fullUrl = computed(() => 'http://' + host.replace('/', '') + '?els=' + params.value);
 
-const shareText = computed(() => `http://twitter.com/share?text=${ogTitle.value}! Find out yours on&url=${fullUrl.value}`)
+const shareTwitter = computed(() => `http://twitter.com/share?text=${ogTitle.value} Find out yours on&url=${fullUrl.value}`);
+const shareTelegram = computed(() => `https://t.me/share/url?url=${fullUrl.value}&text=${ogTitle.value} Find out yours on`);
+const shareFacebook = computed(() => `https://www.facebook.com/dialog/share?app_id=541350505600565&display=popup&href=${fullUrl.value}&redirect_uri=${fullUrl.value}`);
 
 </script>
 <template>
@@ -43,10 +45,10 @@ const shareText = computed(() => `http://twitter.com/share?text=${ogTitle.value}
             <div class="justify-center flex mb-10">
                 <Chart :elements="elements" />
             </div>
-            <div class="mb-8 flex justify-between">
-                <ShareIcon social-media="X" :text-to-post="shareText" bg="bg-x" />
-                <ShareIcon social-media="Telegram" :text-to-post="shareText" bg="bg-telegram" />
-                <ShareIcon social-media="Tumblr" :text-to-post="shareText" bg="bg-tumblr" />
+            <div class="grid gap-4 mb-8 grid-cols-3">
+                <ShareIcon social-media="X" :text-to-post="shareTwitter" bg="bg-x" />
+                <ShareIcon social-media="Facebook" :text-to-post="shareFacebook" bg="bg-facebook" />
+                <ShareIcon social-media="Telegram" :text-to-post="shareTelegram" bg="bg-telegram" />
             </div>
         </main>
     </UContainer>

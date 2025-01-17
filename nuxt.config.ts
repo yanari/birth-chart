@@ -14,10 +14,10 @@ export default defineNuxtConfig({
         pageTransition: { name: 'page', mode: 'out-in' }
     },
     socialShare: {
-        baseUrl: 'https://calculate-astrology.netlify.app'
+        baseUrl: 'elementscalculator.vercel.app'
     },
     site: { 
-        url: 'https://calculate-astrology.netlify.app', 
+        url: 'elementscalculator.vercel.app', 
         name: 'Calculate your dominant element!' 
     }, 
     ogImage: {

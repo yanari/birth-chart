@@ -13,16 +13,17 @@ const normalizedName = computed(() => socialMedia.toLowerCase());
 const iconName = computed(() => `i-lineicons-${normalizedName.value}`);
 </script>
 <template>
-    <div>
+    <div :class="bg" class="rounded-md opacity-75 transition-opacity hover:opacity-100 p-2">
         <a
-            :class="'flex items-center rounded-md px-4 h-14 w-48 opacity-75 transition-opacity hover:opacity-100 ' + bg"
+            class="flex flex-col md:flex-row items-center justify-center gap-2"
             :href="textToPost"
-            target="blank"
+            target="_blank"
+            rel="noopener noreferrer"
         >
-            <UIcon :name="iconName" class="size-10 mr-2" />
             <span class="text-sm/tight">
-                Share your result on {{ socialMedia }}
+                Share on
             </span>
+            <UIcon :name="iconName" class="size-10" />
         </a>
     </div>
 </template>

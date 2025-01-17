@@ -11,6 +11,5 @@ export default defineEventHandler(async (event) => {
       }
     })
 
-    console.log('body', body)
     return { response }
 })
