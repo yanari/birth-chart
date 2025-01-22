@@ -13,7 +13,7 @@ provide('isBgLoaded', {
 });
 </script>
 <template>
-    <div class="overflow-auto w-screen h-screen relative">
+    <div class="overflow-auto w-screen h-dvh relative">
         <BackgroundImage />
         <NuxtPage />
         <UNotifications />
