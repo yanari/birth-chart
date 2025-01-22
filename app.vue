@@ -1,5 +1,16 @@
 <script setup>
 import 'assets/main.css';
+
+const isBgLoaded = ref(false);
+
+function setIsBgLoaded() {
+    isBgLoaded.value = true;
+}
+
+provide('isBgLoaded', {
+    isBgLoaded,
+    setIsBgLoaded
+});
 </script>
 <template>
     <div class="overflow-auto w-screen h-screen">

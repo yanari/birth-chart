@@ -16,13 +16,4 @@ export default defineNuxtConfig({
     socialShare: {
         baseUrl: 'elementscalculator.vercel.app'
     },
-    site: { 
-        url: 'elementscalculator.vercel.app', 
-        name: 'Calculate your dominant element!' 
-    }, 
-    ogImage: {
-        fonts: [
-          'Lato:700'
-        ]
-    }
 })
