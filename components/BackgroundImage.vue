@@ -4,11 +4,9 @@ const {
     setIsBgLoaded
 } = inject('isBgLoaded');
 
-console.log(isBgLoaded);
 </script>
 <template>
     <div class="bg-neutral-900 absolute left-0 top-0 bottom-0 right-0 -z-10 w-screen h-screen">
-        <button @click="setIsBgLoaded">show</button>
         <Transition name="fade">
             <NuxtImg
                 class="h-full w-full bg-fixed object-right object-cover overflow-auto transition-opacity"

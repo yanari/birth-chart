@@ -5,9 +5,7 @@ const { data: meta } = await useFetch('/api/meta', {
 });
 
 useHead({
-    htmlAttrs: {
-        lang: 'en'
-    },
+    htmlAttrs: { lang: 'en' },
     link: [
         {
             rel: 'icon',
