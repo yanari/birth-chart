@@ -78,9 +78,11 @@ async function onSubmit(event) {
             <UButton
                 :loading="isLoading"
                 :disabled="isDisabled"
-                :ui="{ rounded: 'rounded-full' }"
+                :ui="{ rounded: 'rounded md:rounded-full' }"
                 type="submit"
                 label="Submit"
+                size="xl"
+                variant="outline"
                 block
             >
                 <template #trailing>

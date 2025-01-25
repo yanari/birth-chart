@@ -42,10 +42,10 @@ const shareFacebook = computed(() => `https://www.facebook.com/dialog/share?app_
                 <Description :set="lack" />
             </div>
             <UDivider class="mb-8" />
-            <div class="justify-center flex mb-10">
+            <div class="justify-center flex mb-14">
                 <Chart :elements="elements" />
             </div>
-            <div class="grid gap-4 mb-8 grid-cols-3">
+            <div class="grid gap-4 mb-14 grid-cols-3">
                 <ShareIcon social-media="X" :text-to-post="shareTwitter" bg="bg-x" />
                 <ShareIcon social-media="Facebook" :text-to-post="shareFacebook" bg="bg-facebook" />
                 <ShareIcon social-media="Telegram" :text-to-post="shareTelegram" bg="bg-telegram" />

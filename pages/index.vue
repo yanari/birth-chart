@@ -33,11 +33,17 @@ const { isBgLoaded } = inject('isBgLoaded');
 </script>
 <template>
     <Transition name="fade">
-        <UContainer v-show="isBgLoaded" class="text-center h-dvh flex justify-center flex-col">
+        <UContainer v-show="isBgLoaded" class="items-center text-center h-dvh flex justify-center flex-col">
             <h1 class="text-5xl/relaxed font-semibold mb-8">Calculate the dominant element in your birth chart!</h1>
-            <NuxtLink to="/form">
-                <UButton color="primary" size="xl">Begin</UButton>
-            </NuxtLink>
+            <UButton
+                class="max-w-lg"
+                to="/form"
+                color="primary"
+                size="xl"
+                :ui="{ rounded: 'rounded md:rounded-full' }"
+                block
+                label="Begin"
+            />
         </UContainer>
     </Transition>
 </template>

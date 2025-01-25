@@ -9,7 +9,7 @@ const bgColor = computed(() => {
 });
 </script>
 <template>
-    <li class="text-stone-300" :class="bgColor">
+    <li class="text-stone-300 text-lg" :class="bgColor">
         <span>
             {{ trait }}
         </span>
