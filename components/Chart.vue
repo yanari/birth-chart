@@ -10,7 +10,7 @@ const chartData = ref(null);
 
 const options = reactive({
     borderWidth: 1,
-    borderColor: '#777',
+    borderColor: '#fff',
     responsive: true,
     plugins: {
         tooltip: {
@@ -18,6 +18,12 @@ const options = reactive({
                 label: (({ formattedValue }) => formattedValue + '%'),
             },
         },
+        legend: {
+            labels: {
+                usePointStyle: true,
+                color: '#fff',
+            },
+        }
     }
 })
 
@@ -35,6 +41,7 @@ onMounted(() => {
 const labels = computed(() => {
     return elements.map(i => i.name);
 });
+console.log(labels.value)
 const elementsData = computed(() => {
     return elements.map(i => i.percentage);
 });
@@ -43,11 +50,6 @@ const colors = computed(() => {
 });
 </script>
 <template>
-    <Doughnut
-        class="max-h-80"
-        v-if="chartData !== null"
-        :data="chartData"
-        :options="options"
-    />
+    <Doughnut class="max-h-80 text-white" v-if="chartData !== null" :data="chartData" :options="options" />
 </template>
 <style scoped></style>

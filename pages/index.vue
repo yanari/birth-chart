@@ -40,7 +40,7 @@ const { isBgLoaded } = inject('isBgLoaded');
                 to="/form"
                 color="primary"
                 size="xl"
-                :ui="{ rounded: 'rounded md:rounded-full' }"
+                :ui="{ rounded: 'rounded md:rounded-full', gap: { xl: '48px'} }"
                 block
                 label="Begin"
             />

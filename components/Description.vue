@@ -5,7 +5,7 @@ const props = defineProps(['set']);
 <template>
     <div class="align-start m-0 mb-12">
         <div class="mb-4" v-for="element in set">
-            <h3 class="text-4xl font-bold mb-4" :style="{ color: element.color }">
+            <h3 class="text-4xl font-bold mb-4 filter brightness-150" :style="{ color: element.color }">
                 {{ element.name }}
             </h3>
             <p class="mb-4 text-lg">{{ element.description }}</p>

@@ -3,7 +3,7 @@
 
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --vt-c-white: #dddddd;
+  --vt-c-white: #eee;
   --vt-c-indigo: #2c3e50;
 
   --vt-c-text-light-1: var(--vt-c-indigo);
