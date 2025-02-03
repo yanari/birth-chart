@@ -12,9 +12,8 @@ const googleApi = ref(null);
 onMounted(() => setupGoogleMaps());
 
 const setupGoogleMaps = async () => {
-    const GOOGLE_MAPS_API_KEY = 'AIzaSyBdrq7sqJZ9LLuxv2G6HApUWpYRMcxL6uA'
     const loader = new Loader({
-        apiKey: GOOGLE_MAPS_API_KEY,
+        apiKey: process.env.GOOGLE_MAPS_API_KEY,
         version: 'weekly',
         libraries: ['places']
     });
