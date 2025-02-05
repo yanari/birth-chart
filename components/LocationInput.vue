@@ -1,4 +1,6 @@
 <script setup>
+import { Loader } from '@googlemaps/js-api-loader';
+
 const model = defineModel({ lat: null, lng: null });
 
 const input = ref('');
@@ -7,20 +9,18 @@ const inputRef = useTemplateRef('inputRef');
 const completer = ref(null);
 const googleApi = ref(null);
 
-onMounted(() => {
-    googleApi.value = await $fetch('/api/maps');
-});
+onMounted(() => setupGoogleMaps());
 
-// const setupGoogleMaps = async () => {
-//     console.log(process.env.BACKEND_URL)
-//     const loader = new Loader({
-//         apiKey: process.env.GOOGLE_MAPS_API_KEY,
-//         version: 'weekly',
-//         libraries: ['places']
-//     });
+const setupGoogleMaps = async () => {
+    const config = useRuntimeConfig();
+    const loader = new Loader({
+        apiKey: config.public.googleMapsApiKey,
+        version: 'weekly',
+        libraries: ['places']
+    });
 
-//     googleApi.value = await loader.load();
-// }
+    googleApi.value = await loader.load();
+}
 
 const autoCompleteResult = () => {
     const options = {
