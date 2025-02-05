@@ -9,6 +9,7 @@ const params = ref(route.query.els);
 
 const { host } = useRequestURL();
 
+const zodiacSigns = ref(data.zodiacSigns);
 
 const dominant = ref(data.dominant);
 const lack = ref(data.lack);
@@ -34,16 +35,16 @@ const shareFacebook = computed(() => `https://www.facebook.com/dialog/share?app_
                 <h2 class="text-4xl/relaxed md:text-4xl/loose font-bold text-center mb-6">
                     {{ dominantTitle }}:
                 </h2>
-                <Description :set="dominant" />
+                <Description :set="dominant" :signs="zodiacSigns" />
                 <UDivider class="mb-8" />
                 <h2 class="text-2xl/relaxed md:text-3xl/loose font-bold text-center mb-6">
                     {{ lackOfTitle }}:
                 </h2>
-                <Description :set="lack" />
+                <Description :set="lack" :signs="zodiacSigns" />
             </div>
             <UDivider class="mb-8" />
             <div class="justify-center flex mb-14">
-                <Chart :elements="elements" />
+                <Chart :elements="elements" :signs="zodiacSigns" />
             </div>
             <div class="grid gap-4 mb-14 grid-cols-3">
                 <ShareIcon social-media="X" :text-to-post="shareTwitter" bg="bg-x" />

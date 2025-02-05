@@ -17,8 +17,7 @@ const isLoading = ref(false);
 const isDisabled = computed(() => {
     const isLatEmpty = isLatitudesEmpty(state.latLng);
     const isDateToday = isDateEmpty(state.date)
-    
-    return isLatEmpty && isDateToday;
+    return isLatEmpty || isDateToday;
 })
 
 async function onSubmit(event) {
@@ -82,6 +81,7 @@ async function onSubmit(event) {
                 type="submit"
                 label="Submit"
                 size="xl"
+                v-bind="isDisabled && {color: 'gray'}"
                 variant="outline"
                 block
             >
