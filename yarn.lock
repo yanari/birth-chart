@@ -560,10 +560,24 @@
   dependencies:
     "@tanstack/vue-virtual" "^3.0.0-beta.60"
 
+"@iconify-json/grommet-icons@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@iconify-json/grommet-icons/-/grommet-icons-1.2.1.tgz#b18375d1478c0ee821e63f5a7067ac86b36f8afc"
+  integrity sha512-x5RT+J4QIUUsgLobgBXjaKp+gpjIy1fMyBSdbhU5nv8F5it3tkmqj2/U2jt8KRgjVnlIgvKqKsGVll48flMnew==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify-json/heroicons@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@iconify-json/heroicons/-/heroicons-1.2.1.tgz#c298591995780de651ca1dd38f3a1c35d2087124"
   integrity sha512-TkKfS5U27kE5MXmSGLzPoz95BP5VA9xEJXwJFwmPMVLX+xyWq0OkoiWTUXB0uAoQODpb8BaRpzSydItrq9fIRA==
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify-json/lineicons@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@iconify-json/lineicons/-/lineicons-1.2.4.tgz#8e9a8cba72a640a50f7f4cfddbdf753315aa5090"
+  integrity sha512-OKvUL14Z7CgD027OWtse56GK0T8MDDMnFw75MjOlGAgleLJBR9Uue7nSEteF5K/fLjvSKtIhjnRLsN8BC3TpLg==
   dependencies:
     "@iconify/types" "*"
 

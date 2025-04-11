@@ -1,14 +1,20 @@
 <script setup>
-const props = defineProps(['set', 'signs']);
+const props = defineProps(['set', 'signs'])
 </script>
 <template>
     <div class="align-start m-0 mb-12">
         <div class="mb-4" v-for="element in set">
-            <h3 class="text-4xl font-bold mb-4 filter brightness-150" :style="{ color: element.color }">
+            <h3
+                class="text-4xl font-bold mb-4 filter brightness-150"
+                :style="{ color: element.color }"
+            >
                 {{ element.name }}
-                <span class="text-lg">
-                    <span v-for="sign in signs[element.name]" class="mr-2 filter saturate-150">
-                        {{ sign.name }} {{ sign.symbol}}
+                <span class="text-base">
+                    <span
+                        v-for="sign in signs[element.name]"
+                        class="mr-2 filter saturate-150"
+                    >
+                        {{ sign.name }} {{ sign.symbol }}
                     </span>
                 </span>
             </h3>
@@ -24,7 +30,10 @@ const props = defineProps(['set', 'signs']);
     </div>
 </template>
 <style>
-ul>li {
-    margin: 0 .5rem .5rem 0;
+h3 span {
+    font-family: 'Lato', sans-serif;
+}
+ul > li {
+    margin: 0 0.5rem 0.5rem 0;
 }
 </style>
