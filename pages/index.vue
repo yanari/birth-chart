@@ -19,14 +19,18 @@ useSeoMeta({
     title: () => meta.value.ogTitle,
     ogTitle: () => meta.value.ogTitle,
     twitterTitle: () => meta.value.ogTitle,
-    twitterImage: () => meta.value.ogImage,
-    twitterDescription: () => meta.value.ogDescription,
+
     description: () => meta.value.ogDescription,
     ogDescription: () => meta.value.ogDescription,
+    twitterDescription: () => meta.value.ogDescription,
+
     ogImage: () => meta.value.ogImage,
+    twitterImage: () => meta.value.ogImage,
+
     ogUrl: () => meta.value.ogUrl,
+    ogType: () => meta.value.ogType,
     twitterCard: () => meta.value.twitterCard,
-});
+})
 
 const { isBgLoaded } = inject('isBgLoaded');
 
